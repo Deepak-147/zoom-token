@@ -1,0 +1,26 @@
+{
+  "name": "zoom-token",
+  "version": "1.0.0",
+  "description": "API for generating zoom token (Access token and SDK JWT)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Deepak-147/zoom-token.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Deepak-147/zoom-token/issues"
+  },
+  "homepage": "https://github.com/Deepak-147/zoom-token#readme",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "jsrsasign": "^10.5.27",
+    "request": "^2.88.2"
+  }
+}
