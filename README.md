@@ -1,2 +1,2 @@
 # zoom-token
-API for generating zoom token (Access token and SDK JWT)
+API for generating Zoom tokens (Access token and SDK JWT)
