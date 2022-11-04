@@ -23,15 +23,15 @@ In terminal, run the following command to clone the repo:
 
    `$ cd zoom-token`
 
-1. Then install the dependencies:
+2. Then install the dependencies:
 
    `$ npm install`
 
-1. Create an environment file to store your SDK Key and Secret:
+3. Create an environment file to store your credentials:
 
    `$ touch .env`
 
-1. Add the following code to the `.env` file, and insert your credentials for the two apps configured on the [Zoom App Marketplace](https://marketplace.zoom.us/develop/create):
+4. Add the following code to the `.env` file, and insert your credentials for the two apps configured on the [Zoom App Marketplace](https://marketplace.zoom.us/develop/create):
 
    ```
    ZOOM_SDK_KEY=YOUR_SDK_KEY_HERE
@@ -41,9 +41,9 @@ In terminal, run the following command to clone the repo:
    ACCOUNT_ID=YOUR_ACCOUNT_ID_HERE
    ```
 
-1. Save and close `.env`.
+5. Save and close `.env`
 
-1. Start the server:
+6. Start the server:
 
    `$ npm start`
 
