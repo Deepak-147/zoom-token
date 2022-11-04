@@ -8,8 +8,8 @@ API for generating Zoom tokens (Access token and SDK JWT)
 ---
 
 This is a Node.js / Express server that can generate two types of tokens.
-1. Access Token: For accessing [Zoom public APIs](https://marketplace.zoom.us/docs/api-reference/introduction/) and
-2. SDK JWT: For using [Zoom SDK](https://marketplace.zoom.us/docs/sdk/native-sdks/introduction/).
+1. **Access Token**: For accessing [Zoom public APIs](https://marketplace.zoom.us/docs/api-reference/introduction/) and
+2. **SDK JWT**: For using [Zoom SDK](https://marketplace.zoom.us/docs/sdk/native-sdks/introduction/).
 
 ## Installation
 
