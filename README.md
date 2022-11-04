@@ -31,7 +31,7 @@ In terminal, run the following command to clone the repo:
 
    `$ touch .env`
 
-1. Add the following code to the `.env` file, and insert your Zoom SDK App's Key and Secret found on the App Credentials page in the Zoom App Marketplace:
+1. Add the following code to the `.env` file, and insert your credentials for the two apps configured on the [Zoom App Marketplace](https://marketplace.zoom.us/develop/create):
 
    ```
    ZOOM_SDK_KEY=YOUR_SDK_KEY_HERE
@@ -47,15 +47,6 @@ In terminal, run the following command to clone the repo:
 
    `$ npm start`
 
-## Usage
-
-Make a GET request to `http://localhost:3000/token?type=access` (or your deployed url) with the following request body:
-
-| Key                   | Value Description |
-| -----------------------|-------------|
-| meetingNumber          | Required, the Zoom Meeting or Webinar Number. |
-| role                   | Required, `0` to specify participant, `1` to specify host.  |
-
 ### Example Request
 
 Make a GET request to `http://localhost:3000/token?type=access` to get an **Access token**
@@ -69,4 +60,4 @@ If successful, the response will look something like this:
 }
 ```
 
-Similarly to get a **SDK JWT** pass 'sdjwt' as query param in the request.
+Similarly to get a **SDK JWT** pass 'sdkjwt' as query param in the request.
