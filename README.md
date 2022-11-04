@@ -47,7 +47,7 @@ In terminal, run the following command to clone the repo:
 
    `$ npm start`
 
-### Example Request
+## Example Request
 
 Make a GET request to `http://localhost:3000/token?type=access` to get an **Access token**
 
