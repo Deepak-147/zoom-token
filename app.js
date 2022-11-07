@@ -3,7 +3,6 @@ const express = require("express");
 const KJUR = require('jsrsasign');
 const app = express();
 const axios = require('axios');
-const { response } = require('express');
 const port = process.env.PORT || 3000;
 
 app.listen(port, () => {
@@ -27,17 +26,17 @@ app.get("/token", (req, res) => {
                 },
             };
 
-            //axios post request 
-            axios.post("https://zoom.us/oauth/token?grant_type=account_credentials&account_id=" + accountID,{}, options)
+            // axios post request
+            axios.post("https://zoom.us/oauth/token?grant_type=account_credentials&account_id=" + accountID, {}, options)
                 .then(response => {
                     res.json({
                         token: response.data.access_token,
                         type: type
-                    })
+                    });
                 })
-                .catch(error =>{
-                    res.json(error)
-                })
+                .catch(error => {
+                    res.json(error);
+                });
         }
         catch(err) {
             res.json(err);
@@ -63,6 +62,7 @@ app.get("/token", (req, res) => {
             const sHeader = JSON.stringify(oHeader);
             const sPayload = JSON.stringify(oPayload);
             const sdkJWT = KJUR.jws.JWS.sign('HS256', sHeader, sPayload, sdkSecret);
+
             res.json({
                 token: sdkJWT,
                 type: type
@@ -73,6 +73,10 @@ app.get("/token", (req, res) => {
         }
     }
     else {
-        res.json(err);
+        res
+            .status(404)
+            .json({
+                message: "Param \"type\" is either invalid or empty. Check your request and try again."
+            });
     }
 });
