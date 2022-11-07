@@ -1,8 +1,9 @@
 require('dotenv').config();
 const express = require("express");
 const KJUR = require('jsrsasign');
-const request = require('request');
 const app = express();
+const axios = require('axios');
+const { response } = require('express');
 const port = process.env.PORT || 3000;
 
 app.listen(port, () => {
@@ -21,22 +22,22 @@ app.get("/token", (req, res) => {
             const clientID = process.env.CLIENT_ID;
             const clientSecret = process.env.CLIENT_SECRET;
             const options = {
-                method: 'POST',
-                url: "https://zoom.us/oauth/token?grant_type=account_credentials&account_id=" + accountID,
                 headers: {
                     Authorization: "Basic " + Buffer.from(clientID + ':' + clientSecret).toString('base64'),
                 },
             };
-    
-            request(options, function (error, response, body) {
-                if (error) throw new Error(error);
-                let result = JSON.parse(body);
 
-                res.json({
-                    token: result.access_token,
-                    type: type
-                });
-            });
+            //axios post request 
+            axios.post("https://zoom.us/oauth/token?grant_type=account_credentials&account_id=" + accountID,{}, options)
+                .then(response => {
+                    res.json({
+                        token: response.data.access_token,
+                        type: type
+                    })
+                })
+                .catch(error =>{
+                    res.json(error)
+                })
         }
         catch(err) {
             res.json(err);
